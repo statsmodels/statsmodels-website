@@ -20,7 +20,7 @@ Announcements
 
 * **Statsmodels 0.4.0 Release**: A new major release was made on April 29, 2012. All users are encouraged to upgrade to this version.
 
-* **Google Summer of Code 2012**: We have had four students accepted to the Google Summer of Code 2012. This is statsmodels fourth year of participation in GSoC and promises to be our best yet.
+* **Google Summer of Code 2012**: We have had four students accepted to the Google Summer of Code 2012. This is statsmodels fourth year of participation in GSoC and promises to be our best yet. You can follow progress on each student's blog. The projects are `Nonparametrics Econometrics <http://statsmodels-np.blogspot.ca/>`__, `Systems of Equations <http://blog.a.crayssac.net/>`__, `Empirical Likelihood Methods <http://landopystat.blogspot.ca/>`__, and `(Robust) Non-linear Models <http://nonlinearstatsmodels.blogspot.in/>`__.
 
 .. toctree::
    :hidden:
