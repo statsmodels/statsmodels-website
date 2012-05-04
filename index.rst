@@ -1,4 +1,4 @@
-Statsmodels is a Python module that allows users to conduct data exploration, estimate statistical models, perform statistical tests. An extensive list of result statistics are avalable for each estimator. Researchers across fields may find that statsmodels fully meets their needs for statistical computing and data analysis in Python. Features include:
+Statsmodels is a Python module that allows users to explore data statistics, estimate statistical models, and perform statistical tests. An extensive list of result statistics are available for each estimator. Researchers across fields may find that statsmodels fully meets their needs for statistical computing and data analysis in Python. Features include:
 
 * Linear regression models
 * Generalized linear models
