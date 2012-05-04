@@ -1,8 +1,8 @@
 Installation
 ============
 
-Stable Releases
----------------
+Current Stable Release (|stable_version|)
+-----------------------------------------
 
 You can obtain source distributions and Windows binaries `from PyPi <http://pypi.python.org/pypi/statsmodels>`__. Alternatively, you can use setuptools to install statsmodels::
 
@@ -14,8 +14,8 @@ or upgrade with::
 
 Zipped archives and tarballs of older releases are available from `github <https://github.com/statsmodels/statsmodels/tags>`__.
 
-Bleeding Edge
--------------
+Bleeding Edge (|dev_version|-dev)
+---------------------------------
 
 See the :doc:`developer's page <developer>` for instructions on obtaining the most up to date version of statsmodels. We try to keep this code stable and ready for production use.
 

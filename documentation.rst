@@ -1,8 +1,8 @@
 Documentation
 -------------
 
-* Current Stable Version (0.4.0) — `HTML <http://statsmodels.sourceforge.net/stable/index.html>`__
-* Current Development Version (0.5.0) — `HTML <http://statsmodels.sourceforge.net/devel/index.html>`__
+* Current Stable Version (|stable_version|) — `HTML <http://statsmodels.sourceforge.net/stable/index.html>`__
+* Current Development Version (|dev_version|) — `HTML <http://statsmodels.sourceforge.net/devel/index.html>`__
 
 Blogs featuring Statsmodels
 ---------------------------

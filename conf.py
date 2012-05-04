@@ -240,3 +240,20 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+
+####################################################
+#### Project Related Variables Used in the Site
+####################################################
+
+rst_epilog = """
+.. |stable_version| replace:: 0.4.0
+.. |dev_version| replace:: 0.5.0
+"""
+
+# these are for use in the templates
+html_context = dict(
+    stable_version='0.4.0',
+    dev_version='0.5.0'
+)
+
