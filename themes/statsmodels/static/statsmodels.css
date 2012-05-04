@@ -1,0 +1,14 @@
+div.version {
+    border: 1px solid #D1DDE2;
+    border-radius: 10px;
+    padding: 1em .5em;
+    margin: 10px 10px;
+}
+
+div.version>a {
+    font-weight: 500;
+}
+
+div.version>div.title {
+    font-weight: bold;
+}

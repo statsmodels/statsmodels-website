@@ -1,0 +1,9 @@
+_build
+sphinxext
+
+*.pdf
+*.ppt
+*.odp
+
+*~
+.build/*
