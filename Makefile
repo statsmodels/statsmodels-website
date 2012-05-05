@@ -151,3 +151,7 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+publish:
+	rsync -avPr -e ssh _build/html/* jseabold,statsmodels@web.sourceforge.net:htdocs/
+	@echo "The documentation has been uploaded to sourceforge."
