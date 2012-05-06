@@ -1,5 +1,8 @@
 Documentation
--------------
+=============
+
+Current Versions
+----------------
 
 * Current Stable Version (|stable_version|) — `HTML <http://statsmodels.sourceforge.net/stable/index.html>`__
 * Current Development Version (|dev_version|) — `HTML <http://statsmodels.sourceforge.net/devel/index.html>`__
