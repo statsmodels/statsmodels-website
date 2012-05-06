@@ -1,0 +1,192 @@
+{% extends "basic/layout.html" %}
+{% set script_files = script_files + ['_static/bootstrap-dropdown.js', '_static/bootstrap-scrollspy.js'] %}
+{% set css_files = ['_static/bootstrap.css', '_static/bootstrap-sphinx.css'] + css_files %}
+
+{# Statsmodels sidebar - redefine the macro from basic/layout.html
+   to use the bootstrap CSS #}
+
+{%- macro oursidebar() %}
+      {%- if render_sidebar %}
+        {#- new style sidebar: explicitly include/exclude templates #}
+        {%- for sidebartemplate in sidebars %}
+        {%- include sidebartemplate %}
+        {%- endfor %}
+      {%- endif %}
+{%- endmacro %}
+
+{% if pagename == 'index' %}
+    {% set title = 'StatsModels: Statistics in Python' %}
+{% endif %}
+
+{# Sidebar: Rework into our Boostrap nav section. #}
+{% macro navBar() %}
+  <div class="topbar" data-scrollspy="scrollspy" >
+    <div class="topbar-inner">
+      <div class="container">
+        <a class="brand" href="{{ pathto(master_doc) }}">statsmodels</a>
+        <ul class="nav">
+            {#{% block sidebartoc %}
+            {% include "navtoc.html" %}
+            {% endblock %}#}
+            <li><a href="{{ pathto('install') }}">Install</a></li>
+            <li><a href="{{ pathto('documentation') }}">Documentation</a></li>
+            <li><a href="{{ pathto('developer') }}">Develop</a></li>
+            <li><a href="https://groups.google.com/group/pystatsmodels?hl=en">Support</a></li>
+            <li>
+              <a href="https://github.com/statsmodels/statsmodels/issues">Bugs</a>
+            </li>
+        </ul>
+        <ul class="nav secondary-nav">
+          {% block sidebarsearch %}
+            {% include "searchbox.html" %}
+          {% endblock %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{%- block extrahead %}
+<link rel="stylesheet" href="_static/statsmodels.css" type="text/css" />
+<!--<script type="text/javascript">
+    (function() {
+     /*
+        Take the nested 2 level TOC list and turn it into
+        a bootstrap nav list
+     */
+     var patchToc = function($span) {
+
+        // grab the top-level ul
+        //var $tocList = $span.children("ul"), $newtocList;
+        var $tocList = $span.children("ul");
+        $tocList.children("li").each(function(index) {
+            $(this).attr({class : "dropdown"});
+            // change href
+            $(this).children("a").each(function(index) {
+                $(this).attr({
+                    href : "#",
+                    class : "dropdown-toggle", 
+                    "data-toggle" : "dropdown"
+                    });
+                });
+            // change its nested lists to dropdown-menu
+            $(this).children("ul").attr({class : "dropdown-menu"});
+            });
+        //var $newtocList = $("");
+        var $newtocList = $span.find("ul").html();
+        return $span.empty().append($newtocList);
+     };
+        // 
+
+     $(document).ready(function () {
+         //patchToc($("span.globaltoc"));
+         // Activate
+         //$('#topbar').dropdown();
+     });
+
+         }());
+     </script>-->
+<!-- No longer using this because we don't want the global and localtoc
+in the navbar. -->
+<!--<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($span, minLevel) {
+    var $tocList = $("<ul/>").attr('class', "dropdown-menu"),
+      findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 10 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          // Add list element.
+          $tocList.append($("<li/>").append($item));
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    // Start construction and return.
+    findA($span);
+
+    // Wipe out old list and patch in new one.
+    return $span.empty("ul").append($tocList);
+  };
+
+  $(document).ready(function () {
+    // Patch the global and local TOC's to be bootstrap-compliant.
+    patchToc($("span.globaltoc"), 1);
+    patchToc($("span.localtoc"), 2);
+
+    // Activate.
+    $('#topbar').dropdown();
+  });
+}());
+</script>-->
+{% endblock %}
+
+{% block header %}{{ navBar() }}{% endblock %}
+
+{# Silence the sidebar's, relbar's #}
+{% block sidebar1 %}{% endblock %}
+{% block sidebar2 %}{% endblock %}
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}{% endblock %}
+
+{%- block content %}
+<div class="container">
+    <div class="row"> 
+        <!-- I think this is based on bootstrap 1.x -SS-->
+        <div class="span4">
+            <!-- sidebar should go here -->
+            {{ oursidebar() }}
+        </div>
+        <div class="span10 offset1">
+            {% block body %} {% endblock %}
+        </div>
+    </div> <!-- row-->
+</div>
+{%- endblock %}
+
+{%- block footer %}
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>
+    {%- if show_copyright %}
+      {%- if hasdoc('copyright') %}
+        {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}<br/>
+      {%- else %}
+        {% trans copyright=copyright|e %}&copy; Copyright {{ copyright }}.{% endtrans %}<br/>
+      {%- endif %}
+    {%- endif %}
+    {%- if last_updated %}
+      {% trans last_updated=last_updated|e %}Last updated on {{ last_updated }}.{% endtrans %}<br/>
+    {%- endif %}
+    {%- if show_sphinx %}
+      {% trans sphinx_version=sphinx_version|e %}Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.{% endtrans %}<br/>
+    {%- endif %}
+    </p>
+  </div>
+</footer>
+{%- endblock %}
+

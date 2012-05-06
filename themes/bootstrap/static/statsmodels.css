@@ -1,0 +1,11 @@
+p {
+    text-align: justify;
+}
+
+div.well>div.title {
+    font-weight: bold;
+}
+
+.topbar .brand {
+    padding-right: 70px;
+}
