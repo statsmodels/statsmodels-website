@@ -247,13 +247,13 @@ texinfo_documents = [
 ####################################################
 
 rst_epilog = """
-.. |stable_version| replace:: 0.4.0
-.. |dev_version| replace:: 0.5.0
+.. |stable_version| replace:: 0.5.0
+.. |dev_version| replace:: 0.6.0
 """
 
 # these are for use in the templates
 html_context = dict(
-    stable_version='0.4.0',
-    dev_version='0.5.0'
+    stable_version='0.5.0',
+    dev_version='0.6.0'
 )
 
