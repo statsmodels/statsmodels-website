@@ -18,6 +18,12 @@ Statsmodels is a Python module that allows users to explore data, estimate stati
 
 Statsmodels runs on Python 2.5 through 3.2. To learn more about statsmodels have a look at our :doc:`documentation <documentation>`.
 
+Examples
+========
+
+.. raw:: html
+   :file: examples.html
+
 Announcements
 =============
 
