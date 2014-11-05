@@ -7,6 +7,11 @@ Current Versions
 * Current Stable Version (|stable_version|) — `HTML <http://statsmodels.sourceforge.net/stable/index.html>`__
 * Current Development Version (|dev_version|) — `HTML <http://statsmodels.sourceforge.net/devel/index.html>`__
 
+Older Versions
+--------------
+
+* Statsmodels 0.5.0 — `HTML <http://statsmodels.sourceforge.net/0.5.0/index.html>`__
+
 Blogs featuring Statsmodels
 ---------------------------
 
