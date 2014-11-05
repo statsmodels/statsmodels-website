@@ -27,6 +27,7 @@ Examples
 Announcements
 =============
 
+* **Statsmodels 0.6.0 Release**: A new major release was mad on November 5, 2014. All users are encouraged to upgrade to this version.
 * **Google Summer of Code 2014**: Statsmodels has again had two students accepted to on statsmodel as part of the `Google Summer of Code 2014 <https://www.google-melange.com/gsoc/homepage/google/gsoc2014>`_ program. Chad Fulton will be working on adding state space modeling capabalities. This will include a general, performant multivariate Kalman Filter. You can follow his progress on his `blog <http://pages.uoregon.edu/cfulton/categories/gsoc.html>`_. Frank Cheng is working to improve missing data handling. In particular he will implement imputation via chained equations (ICE) and multiple imputation via chained equations (MICE). You can follow his progress on his `blog <http://gsocfrankcheng.blogspot.ca/>`_. 
 
 * **Statsmodels 0.5.0 Release**: A new major release was made on August 14, 2013. All users are encouraged to upgrade to this version.
