@@ -10,6 +10,7 @@ Current Versions
 Older Versions
 --------------
 
+* Statsmodels 0.6.0 — `HTML <http://statsmodels.sourceforge.net/0.6.0/index.html>`__
 * Statsmodels 0.5.0 — `HTML <http://statsmodels.sourceforge.net/0.5.0/index.html>`__
 
 Blogs featuring Statsmodels
